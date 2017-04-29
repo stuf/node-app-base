@@ -1,0 +1,29 @@
+{
+  "name": "node-app-base",
+  "version": "0.1.0",
+  "main": "build/main.js",
+  "author": "Stefan Rimaila <stefan@rimaila.fi>",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm run build && npm run start:process",
+    "start:process": "node build/main.js",
+    "build": "webpack --progress",
+    "dev": "npm run build && concurrently --raw --kill-others \"webpack --watch --progress\" \"nodemon build/main.js\""
+  },
+  "dependencies": {
+    "karet.util": "^0.11.8",
+    "kefir": "^3.7.1",
+    "partial.lenses": "^10.3.0",
+    "ramda": "^0.23.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "concurrently": "^3.4.0",
+    "html-webpack-plugin": "^2.28.0",
+    "nodemon": "^1.11.0",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
